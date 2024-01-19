@@ -4,6 +4,23 @@
             "outputFile": "com.newbose.app-mergeDebugResources-34:/values-kk/values-kk.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\USER-PC\\.gradle\\caches\\transforms-3\\d10d040f6dc36d35e250d48d5ebb15bd\\transformed\\jetified-react-android-0.73.2-debug\\res\\values-kk\\values-kk.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,141,211,294,364,439",
+                        "endColumns": "85,69,82,69,74,72",
+                        "endOffsets": "136,206,289,359,434,507"
+                    },
+                    "to": {
+                        "startLines": "41,45,46,48,100,101",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "3715,4030,4100,4246,8300,8375",
+                        "endColumns": "85,69,82,69,74,72",
+                        "endOffsets": "3796,4095,4178,4311,8370,8443"
+                    }
+                },
+                {
                     "source": "C:\\Users\\USER-PC\\.gradle\\caches\\transforms-3\\13659b94c66de92d98d7f8af61234b95\\transformed\\core-1.9.0\\res\\values-kk\\values-kk.xml",
                     "from": {
                         "startLines": "2",
@@ -54,23 +71,6 @@
                         "startOffsets": "323,431,536,646,731,837,956,1036,1113,1204,1297,1392,1486,1586,1679,1774,1871,1962,2053,2134,2239,2342,2440,2547,2653,2753,2919,8218",
                         "endColumns": "107,104,109,84,105,118,79,76,90,92,94,93,99,92,94,96,90,90,80,104,102,97,106,105,99,165,94,81",
                         "endOffsets": "426,531,641,726,832,951,1031,1108,1199,1292,1387,1481,1581,1674,1769,1866,1957,2048,2129,2234,2337,2435,2542,2648,2748,2914,3009,8295"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\USER-PC\\.gradle\\caches\\transforms-3\\65f520f887f0d0f390437980af8cd371\\transformed\\jetified-react-android-0.73.1-debug\\res\\values-kk\\values-kk.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "55,141,211,294,364,439",
-                        "endColumns": "85,69,82,69,74,72",
-                        "endOffsets": "136,206,289,359,434,507"
-                    },
-                    "to": {
-                        "startLines": "41,45,46,48,100,101",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "3715,4030,4100,4246,8300,8375",
-                        "endColumns": "85,69,82,69,74,72",
-                        "endOffsets": "3796,4095,4178,4311,8370,8443"
                     }
                 }
             ]
