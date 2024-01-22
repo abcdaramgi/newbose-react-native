@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {View, Dimensions, StyleSheet, Image} from 'react-native';
+import {View, StyleSheet, Image, Dimensions} from 'react-native';
 
 const {width, height} = Dimensions.get('window');
 
@@ -20,8 +20,8 @@ const images = [
   'https://cdn.pixabay.com/photo/2018/11/29/19/29/autumn-3846345__480.jpg',
 ];
 
-const TestTabScreen: FC = () => {
-  const renderSectionOne = () => {
+const TestTabScreen3: FC = () => {
+  const renderSections = () => {
     return images.map((image, index) => {
       return (
         <View key={index} style={styles.renderOneContainer}>
@@ -31,7 +31,7 @@ const TestTabScreen: FC = () => {
     });
   };
 
-  return <View style={styles.viewStyle}>{renderSectionOne()}</View>;
+  return <View style={styles.viewStyle}>{renderSections()}</View>;
 };
 
 const styles = StyleSheet.create({
@@ -41,11 +41,11 @@ const styles = StyleSheet.create({
   },
   renderOneContainer: {
     width: width / 3,
-    height: height / 5,
+    height: height / 3,
   },
   renderImage: {
     flex: 1,
   },
 });
 
-export default TestTabScreen;
+export default TestTabScreen3;

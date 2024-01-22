@@ -1,7 +1,8 @@
 import React, {FC} from 'react';
 import {Text, View, Button, StyleSheet, Image} from 'react-native';
-import profile from '../../components/testTabScreen';
-import image from '../../components/testTabScreen2';
+import TestTabScreen from '../../components/testTabScreen';
+import TestTabScreen2 from '../../components/testTabScreen2';
+import TestTabScreen3 from '../../components/testTabScreen3';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
 const MyPageScreen: FC = () => {
@@ -17,6 +18,9 @@ const MyPageScreen: FC = () => {
 
   return (
     <>
+      {/* <View style={styles.headContainer}>
+        <Text>id</Text>
+      </View> */}
       <View style={styles.profileContainer}>
         <View style={styles.avatarContainer}>
           <Image
@@ -63,18 +67,18 @@ const MyPageScreen: FC = () => {
         <Text>대구광역시 중구 서성로 20길 25</Text>
         <Text>www.naver.com</Text>
       </View>
-      <View style={styles.tapButtonContainer}>
+      {/* <View style={styles.tapButtonContainer}>
         <Button onPress={() => {}} title="profile" />
         <Button onPress={() => {}} title="image" />
         <Button onPress={() => {}} title="blog" />
-      </View>
+      </View> */}
 
       {/* 렌더링 위치 (웹에서는 컴포넌트화 시켰는데 이렇게 깡으로 렌더링 해줘도 되나?) */}
       {/* {this.renderSection()} */}
       <Tab.Navigator>
-        <Tab.Screen name="profile" component={profile} />
-        <Tab.Screen name="image" component={image} />
-        {/* <Tab.Screen name="blog" component={blog} /> */}
+        <Tab.Screen name="profile" component={TestTabScreen} />
+        <Tab.Screen name="image" component={TestTabScreen2} />
+        <Tab.Screen name="blog" component={TestTabScreen3} />
       </Tab.Navigator>
     </>
   );
@@ -82,6 +86,7 @@ const MyPageScreen: FC = () => {
 
 // @todo: tailwind css 적용
 const styles = StyleSheet.create({
+  headContainer: {},
   profileContainer: {
     flexDirection: 'row',
     paddingTop: 10,
@@ -133,6 +138,7 @@ const styles = StyleSheet.create({
   infoContainer: {
     paddingHorizontal: 10,
     paddingVertical: 10,
+    backgroundColor: 'pink',
   },
   username: {
     fontWeight: 'bold',
