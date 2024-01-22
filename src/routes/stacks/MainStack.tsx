@@ -5,6 +5,8 @@ import FeedScreen from '../../screens/Feed/index';
 import MyPageScreen from '../../screens/MyPage/index';
 import {routeOverlayOption} from '../routeOptions';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import SearchScreen from '../../screens/Search/index';
+import MapScreen from '../../screens/Map/index';
 // import ModalPage from '../../screens/Modal/index';
 
 // import {customTheme} from '../../theme/index';
@@ -46,7 +48,7 @@ export const MainStackScreen: FC = () => {
       />
       <MainStack.Screen
         name="Map"
-        component={FeedScreen}
+        component={MapScreen}
         options={{
           headerShown: false,
           headerTitleAlign: 'center',
@@ -55,7 +57,7 @@ export const MainStackScreen: FC = () => {
       />
       <MainStack.Screen
         name="Search"
-        component={FeedScreen}
+        component={SearchScreen}
         options={{
           headerShown: false,
           headerTitleAlign: 'center',

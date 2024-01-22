@@ -1,12 +1,12 @@
 import React, {FC} from 'react';
 import {View, Text} from 'react-native';
 
-const SearchScreen: FC = () => {
+const MapScreen: FC = () => {
   return (
     <View>
-      <Text>SearchScreen</Text>
+      <Text>MapScreen</Text>
     </View>
   );
 };
 
-export default SearchScreen;
+export default MapScreen;
