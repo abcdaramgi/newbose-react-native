@@ -11,12 +11,11 @@ import MapScreen from '../../screens/Map/index';
 
 // import {customTheme} from '../../theme/index';
 
-const MainStack = createBottomTabNavigator();
+const MainTab = createBottomTabNavigator();
 
-//이 코드는 현재 의미가 없음 동작을 안한다
-export const MainStackScreen: FC = () => {
+export const MainStack: FC = () => {
   return (
-    <MainStack.Navigator
+    <MainTab.Navigator
       screenOptions={{
         headerShown: false,
         headerTitleStyle: {
@@ -26,7 +25,7 @@ export const MainStackScreen: FC = () => {
         ...routeOverlayOption,
       }}
       initialRouteName="Home">
-      <MainStack.Screen
+      <MainTab.Screen
         name="Home"
         component={HomeScreen}
         options={{
@@ -35,7 +34,7 @@ export const MainStackScreen: FC = () => {
           ...TransitionPresets.SlideFromRightIOS, //IOS 스타일의 오른쪽에서 슬라이드되는 전환 효과를 설정
         }}
       />
-      <MainStack.Screen
+      <MainTab.Screen
         name="Feed"
         component={FeedScreen}
         options={{
@@ -46,7 +45,7 @@ export const MainStackScreen: FC = () => {
           ...TransitionPresets.SlideFromRightIOS,
         }}
       />
-      <MainStack.Screen
+      <MainTab.Screen
         name="Map"
         component={MapScreen}
         options={{
@@ -55,16 +54,17 @@ export const MainStackScreen: FC = () => {
           ...TransitionPresets.SlideFromRightIOS,
         }}
       />
-      <MainStack.Screen
+      <MainTab.Screen
         name="Search"
         component={SearchScreen}
         options={{
           headerShown: false,
           headerTitleAlign: 'center',
+          tabBarStyle: {display: 'none'},
           ...TransitionPresets.SlideFromRightIOS,
         }}
       />
-      <MainStack.Screen
+      <MainTab.Screen
         name="MyPage"
         component={MyPageScreen}
         options={{
@@ -73,7 +73,7 @@ export const MainStackScreen: FC = () => {
           ...TransitionPresets.SlideFromRightIOS,
         }}
       />
-      {/* <MainStack.Screen
+      {/* <MainTab.Screen
         name="Modal"
         component={ModalPage}
         options={{
@@ -82,6 +82,6 @@ export const MainStackScreen: FC = () => {
           ...TransitionPresets.ModalPresentationIOS,
         }}
       /> */}
-    </MainStack.Navigator>
+    </MainTab.Navigator>
   );
 };
