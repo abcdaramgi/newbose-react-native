@@ -3,7 +3,7 @@ import ModalPage from '../screens/Modal/index';
 // import customTheme from '@theme';
 import React, {FC} from 'react';
 import {routeOverlayOption} from './routeOptions';
-import {MainStackScreen} from './stacks/MainStack';
+import {MainStack} from './stacks/MainStack';
 // import BottomTabNavigation from '../components/navigations/BottomTabNavigation';
 
 const RootStack = createStackNavigator();
@@ -19,7 +19,7 @@ export const RootStackScreen: FC = () => {
       {/* <RootStack.Screen name="BottomTab" component={BottomTabNavigation} /> */}
       <RootStack.Screen
         name="Main"
-        component={MainStackScreen}
+        component={MainStack}
         options={{
           headerShown: false,
         }}

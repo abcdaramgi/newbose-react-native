@@ -37,5 +37,10 @@ com.newbose.app-packageDebugResources-35 D:\Github Repos\newbose-react-native\an
 com.newbose.app-merged_res-36 D:\Github Repos\newbose-react-native\android\app\build\intermediates\merged_res\debug
 com.newbose.app-debug-37 D:\Github Repos\newbose-react-native\android\app\src\debug\res
 com.newbose.app-main-38 D:\Github Repos\newbose-react-native\android\app\src\main\res
-com.newbose.app-packaged_res-39 D:\Github Repos\newbose-react-native\node_modules\react-native-safe-area-context\android\build\intermediates\packaged_res\debug
-com.newbose.app-packaged_res-40 D:\Github Repos\newbose-react-native\node_modules\react-native-screens\android\build\intermediates\packaged_res\debug
+com.newbose.app-packaged_res-39 D:\Github Repos\newbose-react-native\node_modules\@react-native-community\masked-view\android\build\intermediates\packaged_res\debug
+com.newbose.app-packaged_res-40 D:\Github Repos\newbose-react-native\node_modules\react-native-gesture-handler\android\build\intermediates\packaged_res\debug
+com.newbose.app-packaged_res-41 D:\Github Repos\newbose-react-native\node_modules\react-native-pager-view\android\build\intermediates\packaged_res\debug
+com.newbose.app-packaged_res-42 D:\Github Repos\newbose-react-native\node_modules\react-native-reanimated\android\build\intermediates\packaged_res\debug
+com.newbose.app-packaged_res-43 D:\Github Repos\newbose-react-native\node_modules\react-native-safe-area-context\android\build\intermediates\packaged_res\debug
+com.newbose.app-packaged_res-44 D:\Github Repos\newbose-react-native\node_modules\react-native-screens\android\build\intermediates\packaged_res\debug
+com.newbose.app-packaged_res-45 D:\Github Repos\newbose-react-native\node_modules\react-native-svg\android\build\intermediates\packaged_res\debug
