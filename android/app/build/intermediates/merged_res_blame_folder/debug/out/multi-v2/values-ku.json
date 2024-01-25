@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.newbose.app-mergeDebugResources-34:/values-ku/values-ku.xml",
+            "outputFile": "com.newbose.app-mergeDebugResources-39:/values-ku/values-ku.xml",
             "map": [
                 {
                     "source": "C:\\Users\\USER-PC\\.gradle\\caches\\transforms-3\\d10d040f6dc36d35e250d48d5ebb15bd\\transformed\\jetified-react-android-0.73.2-debug\\res\\values-ku\\values-ku.xml",

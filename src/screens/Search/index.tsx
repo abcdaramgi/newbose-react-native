@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {View, Text, TextInput, StyleSheet, Button} from 'react-native';
+import {View, Text, TextInput, StyleSheet, Button, Image} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 type ItemProps = {title: string};
@@ -54,9 +54,25 @@ const SearchScreen: FC = () => {
           <Item title="10위" />
         </View>
       </View>
-
-      <View style={styles.hotListContainer}>
+      <View style={styles.hotKeywordContainer}>
         <Text>사진들어오ㅓㄴ다</Text>
+        <View style={styles.hotListContainer}>
+          <Image
+            source={require('../../public/images/상의1.jpg')}
+            style={styles.hotListImage}
+          />
+          <Image
+            source={require('../../public/images/하의1.jpg')}
+            style={styles.hotListImage}
+          />
+          <Image
+            source={require('../../public/images/전신샷4.jpg')}
+            style={styles.hotListImage}
+          />
+        </View>
+      </View>
+      <View style={styles.adContainer}>
+        <Text>여기부터는 광고가 접수하겠습니다</Text>
       </View>
     </>
   );
@@ -99,6 +115,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     backgroundColor: 'green',
     marginHorizontal: 10,
+    marginTop: 40,
   },
   hotKeywordItemContainer: {
     backgroundColor: 'orange',
@@ -106,11 +123,29 @@ const styles = StyleSheet.create({
     height: 100,
     minWidth: '100%',
   },
-  hotListContainer: {flexDirection: 'row', flexWrap: 'wrap'},
+  hotListContainer: {
+    flexDirection: 'row',
+    // flexWrap: 'wrap',
+    paddingVertical: 10,
+    marginTop: 20,
+    backgroundColor: 'pink',
+  },
+  hotListImage: {
+    width: 150,
+    height: 150,
+    marginHorizontal: 10,
+  },
   item: {
     backgroundColor: 'red',
     width: 150,
     height: 20,
+  },
+  adContainer: {
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+    backgroundColor: 'purple',
+    marginHorizontal: 10,
+    paddingVertical: 40,
   },
 });
 
