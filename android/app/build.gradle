@@ -117,3 +117,9 @@ dependencies {
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
+
+//숨긴 API 키 로드
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+def googleMapApiKey = properties.getProperty('MAPS_API_KEY')
+manifestPlaceholders = [googleMapApiKey:googleMapApiKey] 
