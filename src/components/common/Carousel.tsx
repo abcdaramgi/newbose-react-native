@@ -1,63 +1,78 @@
-import React, {useState} from 'react';
-import {View, StyleSheet, FlatList} from 'react-native';
+import React, {useState, useMemo} from 'react';
+import {View, StyleSheet} from 'react-native';
+import {FlatList} from 'react-native-gesture-handler';
 import CarouselTab from './CarouselTab';
 
-interface CarouselProps {
+interface ICarousel {
   gap: number;
   offset: number;
-  pages: any[];
-  pageWidth: number;
+  tabs: any[];
+  tabWidth: number;
 }
 
-export default function Carousel({
-  pages,
-  pageWidth,
-  gap,
-  offset,
-}: CarouselProps) {
-  const [page, setPage] = useState(0);
+const Indicator = ({focused}: {focused: boolean}) => {
+  return (
+    <View
+      style={[
+        styles.indicator,
+        focused ? styles.focusedIndicator : styles.unfocusedIndicator,
+      ]}
+    />
+  );
+};
+
+export default function Carousel({tabs, tabWidth, gap, offset}: ICarousel) {
+  const [tab, setTab] = useState(0);
+
+  const tabStyle = useMemo(() => {
+    return StyleSheet.create({
+      tab: {
+        width: tabWidth,
+        marginHorizontal: gap / 2,
+      },
+    });
+  }, [tabWidth, gap]);
+
+  // const Indicator = ({focused}) => (
+  //   <View
+  //     style={{
+  //       margin: '0px 4px',
+  //       backgroundColor: focused ? '#262626' : '#dfdfdf',
+  //       width: 6,
+  //       height: 6,
+  //       borderRadius: 3,
+  //     }}
+  //   />
+  // );
 
   function renderItem({item}: any) {
-    return (
-      <CarouselTab
-        item={item}
-        style={{width: pageWidth, marginHorizontal: gap / 2}}
-      />
-    );
+    return <CarouselTab item={item} style={tabStyle.tab} />;
   }
 
-  const onScroll = (event: any) => {
-    const newPage = Math.round(
-      event.nativeEvent.contentOffset.x / (pageWidth + gap),
-    );
-    setPage(newPage);
+  const onScroll = (e: any) => {
+    const newTab = Math.round(e.nativeEvent.contentOffset.x / (tabWidth + gap));
+    setTab(newTab);
   };
 
   return (
     <View style={styles.container}>
       <FlatList
         automaticallyAdjustContentInsets={false}
-        contentContainerStyle={{
-          paddingHorizontal: offset + gap / 2,
-        }}
-        data={pages}
-        decelerationRate={'fast'}
+        contentContainerStyle={{paddingHorizontal: offset + gap / 2}}
+        data={tabs}
+        decelerationRate="fast"
         horizontal
         keyExtractor={(item: any) => `page__${item.color}`}
         onScroll={onScroll}
         pagingEnabled
         renderItem={renderItem}
-        snapToInterval={pageWidth + gap}
+        snapToInterval={tabWidth + gap}
         snapToAlignment="start"
         showsHorizontalScrollIndicator={false}
       />
       <View style={styles.indicatorWrapper}>
-        {Array.from({length: pages.length}, (_, i) => i).map(i => (
-          <View
-            style={styles.indicator}
-            key={`indicator_${i}`}
-            // focused={i === page}
-          />
+        {Array.from({length: tabs.length}, (_, i) => i).map(i => (
+          <Indicator key={`indicator_${i}`} focused={i === tab} />
         ))}
       </View>
     </View>
@@ -67,24 +82,24 @@ export default function Carousel({
 const styles = StyleSheet.create({
   container: {
     height: '60%',
-    justifyContent: 'center',
     alignItems: 'center',
-  },
-  pageContainer: {
-    width: '100%',
-    marginHorizontal: 8,
+    justifyContent: 'center',
   },
   indicatorWrapper: {
+    marginTop: 16,
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 16,
   },
   indicator: {
-    margin: 4,
+    margin: 2,
     width: 6,
     height: 6,
     borderRadius: 3,
-    backgroundColor: `${(props: {focused: any}) =>
-      props.focused ? '#262626' : '#dfdfdf'}`,
+  },
+  focusedIndicator: {
+    backgroundColor: '#262626',
+  },
+  unfocusedIndicator: {
+    backgroundColor: '#dfdfdf',
   },
 });
