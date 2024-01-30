@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Text, View, Button, StyleSheet, Image} from 'react-native';
+import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import TestTabScreen from '../../components/testTabScreen';
 import TestTabScreen2 from '../../components/testTabScreen2';
 import TestTabScreen3 from '../../components/testTabScreen3';
@@ -45,20 +45,12 @@ const MyPageScreen: FC = () => {
             </View>
           </View>
           <View style={styles.buttonContainer}>
-            <Button
-              onPress={() => {}}
-              title="즐겨찾기"
-              accessibilityLabel="learn more about this purple button"
-            />
-            <Button
-              // bordered
-              // dark
-              // small
-              // icon
-              onPress={() => {}}
-              title="안즐겨찾기"
-              accessibilityLabel="learn more about this purple button"
-            />
+            <TouchableOpacity style={styles.followbutton}>
+              <Text>Follow</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button}>
+              <Text>♡</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
@@ -86,16 +78,39 @@ const MyPageScreen: FC = () => {
 
 // @todo: tailwind css 적용
 const styles = StyleSheet.create({
+  followbutton: {
+    width: 200,
+    height: 25,
+    backgroundColor: 'white',
+    borderRadius: 3,
+    borderWidth: 1,
+    borderColor: 'gray',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 5,
+  },
+  button: {
+    width: 80,
+    height: 25,
+    backgroundColor: 'deepskyblue',
+    borderRadius: 3,
+    borderWidth: 1,
+    borderColor: 'gray',
+    color: 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 5,
+  },
   headContainer: {},
   profileContainer: {
     flexDirection: 'row',
     paddingTop: 10,
-    backgroundColor: 'red',
+    backgroundColor: 'white',
   },
   avatarContainer: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: 'blue',
+    backgroundColor: 'white',
   },
   avatar: {
     width: 75,
@@ -108,7 +123,7 @@ const styles = StyleSheet.create({
   statsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    backgroundColor: 'green',
+    backgroundColor: 'white',
   },
   statItem: {
     alignItems: 'center',
@@ -120,7 +135,8 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     marginTop: 10,
-    backgroundColor: 'yellow',
+    backgroundColor: 'white',
+    // width: 200,
   },
   editProfileButton: {
     flex: 4,
@@ -138,7 +154,7 @@ const styles = StyleSheet.create({
   infoContainer: {
     paddingHorizontal: 10,
     paddingVertical: 10,
-    backgroundColor: 'pink',
+    backgroundColor: 'white',
   },
   username: {
     fontWeight: 'bold',

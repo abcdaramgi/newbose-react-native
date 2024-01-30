@@ -1,8 +1,17 @@
 import FirstButton from '../../components/FirstButton';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import React, {FC} from 'react';
-import {Text, View, TextInput, StyleSheet, Button, Image} from 'react-native';
+import {
+  Text,
+  View,
+  TextInput,
+  StyleSheet,
+  Button,
+  Image,
+  Dimensions,
+} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import Carousel from '../../components/common/Carousel';
 
 // const DATA = [
 //   {
@@ -21,6 +30,30 @@ import {useNavigation} from '@react-navigation/native';
 
 type ItemProps = {title: string};
 
+const screenWidth = Math.round(Dimensions.get('window').width);
+const PAGES = [
+  {
+    num: 1,
+    color: '#86E3CE',
+  },
+  {
+    num: 2,
+    color: '#D0E6A5',
+  },
+  {
+    num: 3,
+    color: '#FFDD94',
+  },
+  {
+    num: 4,
+    color: '#FA897B',
+  },
+  {
+    num: 5,
+    color: '#CCABD8',
+  },
+];
+
 const Item = ({title}: ItemProps) => (
   <View style={styles.item}>
     <Text>{title}</Text>
@@ -36,14 +69,10 @@ const HomeScreen: FC = () => {
     <>
       <TextInput style={styles.input} placeholder="검색어" />
       <View style={styles.viewContainer}>
-        <Item title="ddd" />
-        <Item title="zzz" />
-        <Item title="zzz" />
-        <Item title="zzz" />
-        <Item title="zzz" />
-        <Item title="zzz" />
-        <Item title="zzz" />
-        <Item title="zzz" />
+        <Item title="배송" />
+        <Item title="예약" />
+        <Item title="기능" />
+        <Item title="기능" />
         <Button
           title="go to first"
           onPress={() => navigation.navigate('MyModal' as never)} //as never을 붙여서 되긴하는데 이게 맞는건지는 모르겠음
@@ -59,7 +88,13 @@ const HomeScreen: FC = () => {
       /> */}
       </View>
       <View style={styles.viewContainer2}>
-        <View style={styles.item2} />
+        {/* <View style={styles.item2} /> */}
+        <Carousel
+          gap={16}
+          offset={36}
+          pages={[PAGES]}
+          pageWidth={screenWidth - (16 + 36) * 2}
+        />
       </View>
 
       <View style={styles.viewContainer3}>
@@ -90,10 +125,11 @@ const styles = StyleSheet.create({
   },
   item: {
     backgroundColor: 'red',
-    borderRadius: 20,
+    borderRadius: 15,
     padding: 20,
     marginVertical: 10,
     marginHorizontal: 10,
+    width: 70,
   },
   title: {
     fontSize: 32,
@@ -107,7 +143,7 @@ const styles = StyleSheet.create({
   },
   viewContainer2: {
     marginHorizontal: 10,
-    backgroundColor: 'green',
+    // backgroundColor: 'green',
   },
   item2: {
     backgroundColor: 'red',
