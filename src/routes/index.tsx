@@ -1,10 +1,10 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import ModalPage from '../screens/Modal/index';
+import LoginPage from '../screens/Login/index';
 // import customTheme from '@theme';
 import React, {FC} from 'react';
 import {routeOverlayOption} from './routeOptions';
 import {MainStack} from './stacks/MainStack';
-// import BottomTabNavigation from '../components/navigations/BottomTabNavigation';
 
 const RootStack = createStackNavigator();
 
@@ -15,8 +15,8 @@ export const RootStackScreen: FC = () => {
         headerShown: false,
         presentation: 'modal',
         ...routeOverlayOption,
+        cardStyle: {backgroundColor: 'white'},
       }}>
-      {/* <RootStack.Screen name="BottomTab" component={BottomTabNavigation} /> */}
       <RootStack.Screen
         name="Main"
         component={MainStack}
@@ -41,8 +41,12 @@ export const RootStackScreen: FC = () => {
         }}
       />
       {/* @todo 회원가입 및 로그인 스크린 만들기 */}
-      {/* <RootStack.Screen name="Login" component={LoginScreen} />
-      <RootStack.Screen name="Register" component={RegisterScreen} /> */}
+      <RootStack.Screen
+        name="Login"
+        component={LoginPage}
+        options={{headerShown: true}}
+      />
+      {/* <RootStack.Screen name="Register" component={RegisterScreen} /> */}
     </RootStack.Navigator>
   );
 };

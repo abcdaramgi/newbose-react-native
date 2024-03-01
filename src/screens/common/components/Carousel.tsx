@@ -81,7 +81,7 @@ export default function Carousel({tabs, tabWidth, gap, offset}: ICarousel) {
 
 const styles = StyleSheet.create({
   container: {
-    height: '60%',
+    height: 200,
     alignItems: 'center',
     justifyContent: 'center',
   },

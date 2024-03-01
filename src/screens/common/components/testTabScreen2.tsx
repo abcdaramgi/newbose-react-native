@@ -21,7 +21,7 @@ const TestTabScreen2: FC = () => {
           자연스럽게 이루어질까요?
         </Text>
         <Image
-          source={require('../public/images/vbuOix_cut.jpg')}
+          source={require('../../../public/images/vbuOix_cut.jpg')}
           style={styles.postImage}
         />
       </View>

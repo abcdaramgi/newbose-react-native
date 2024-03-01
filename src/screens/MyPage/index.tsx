@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
 import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import TestTabScreen from '../../components/testTabScreen';
-import TestTabScreen2 from '../../components/testTabScreen2';
-import TestTabScreen3 from '../../components/testTabScreen3';
+import TestTabScreen from '../common/components/testTabScreen';
+import TestTabScreen2 from '../common/components/testTabScreen2';
+import TestTabScreen3 from '../common/components/testTabScreen3';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
 const MyPageScreen: FC = () => {
@@ -55,9 +55,9 @@ const MyPageScreen: FC = () => {
         </View>
       </View>
       <View style={styles.infoContainer}>
-        <Text style={styles.username}>싸우자 귀신아</Text>
-        <Text>대구광역시 중구 서성로 20길 25</Text>
-        <Text>www.naver.com</Text>
+        <Text style={styles.username}>NewBose</Text>
+        <Text>대구광역시 중구 ******</Text>
+        <Text>www.*****.com</Text>
       </View>
       {/* <View style={styles.tapButtonContainer}>
         <Button onPress={() => {}} title="profile" />
@@ -68,9 +68,9 @@ const MyPageScreen: FC = () => {
       {/* 렌더링 위치 (웹에서는 컴포넌트화 시켰는데 이렇게 깡으로 렌더링 해줘도 되나?) */}
       {/* {this.renderSection()} */}
       <Tab.Navigator>
-        <Tab.Screen name="profile" component={TestTabScreen} />
-        <Tab.Screen name="image" component={TestTabScreen2} />
-        <Tab.Screen name="blog" component={TestTabScreen3} />
+        <Tab.Screen name="피드" component={TestTabScreen} />
+        <Tab.Screen name="게시글" component={TestTabScreen2} />
+        <Tab.Screen name="매거진" component={TestTabScreen3} />
       </Tab.Navigator>
     </>
   );

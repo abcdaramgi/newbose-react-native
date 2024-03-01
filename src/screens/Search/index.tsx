@@ -67,7 +67,7 @@ const SearchScreen: FC = () => {
         </View>
       </View>
       <View style={styles.hotKeywordContainer}>
-        <Text style={styles.textStyles}>사진들어오ㅓㄴ다</Text>
+        <Text style={styles.textStyles}>인기 가게 상품</Text>
         <View style={styles.hotListContainer}>
           <Image
             source={require('../../public/images/상의1.jpg')}
@@ -84,7 +84,8 @@ const SearchScreen: FC = () => {
         </View>
       </View>
       <View style={styles.adContainer}>
-        <Text>여기부터는 광고가 접수하겠습니다</Text>
+        <Text style={styles.margin}>행복옷가게</Text>
+        <Text style={styles.margin}>행운옷가게</Text>
       </View>
     </>
   );
@@ -169,11 +170,15 @@ const styles = StyleSheet.create({
     height: 20,
   },
   adContainer: {
-    flexDirection: 'column',
+    flexDirection: 'row',
     flexWrap: 'wrap',
     backgroundColor: 'white',
     marginHorizontal: 10,
     paddingVertical: 40,
+    // marginLeft: 30,
+  },
+  margin: {
+    marginRight: 100,
   },
 });
 

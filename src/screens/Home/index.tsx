@@ -1,10 +1,8 @@
-import FirstButton from '../../components/FirstButton';
-import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import React, {FC} from 'react';
 import {Text, View, TextInput, StyleSheet, Button, Image} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {ScrollView} from 'react-native-gesture-handler';
-import Carousel from '../../components/common/Carousel';
+import Carousel from '../common/components/Carousel';
 import {Dimensions} from 'react-native';
 
 const PAGES = [
@@ -40,15 +38,14 @@ const Item = ({title}: ItemProps) => (
   </View>
 );
 
-const Tab = createMaterialTopTabNavigator();
-
 const HomeScreen: FC = () => {
   const navigation = useNavigation();
 
   return (
-    <>
-      <TextInput style={styles.input} placeholder="검색어" />
-      <ScrollView>
+    <ScrollView
+      contentContainerStyle={{height: Dimensions.get('screen').height * 2}}>
+      <>
+        <TextInput style={styles.input} placeholder="검색어" />
         <View style={styles.viewContainer}>
           <Item title="배송" />
           <Item title="예약" />
@@ -58,9 +55,10 @@ const HomeScreen: FC = () => {
             title="go to first"
             onPress={() => navigation.navigate('MyModal' as never)} //as never을 붙여서 되긴하는데 이게 맞는건지는 모르겠음
           />
-          <Tab.Navigator>
-            <Tab.Screen name="FirstButton" component={FirstButton} />
-          </Tab.Navigator>
+          <Button
+            title="go to login"
+            onPress={() => navigation.navigate('Login' as never)}
+          />
 
           {/* <FlatList
         data={DATA}
@@ -77,7 +75,6 @@ const HomeScreen: FC = () => {
             tabWidth={screenWidth - (16 + 36) * 2}
           />
         </View>
-
         <View style={styles.viewContainer3}>
           <Text>근처가게or룩북</Text>
           <View style={styles.imageContainer}>
@@ -95,15 +92,14 @@ const HomeScreen: FC = () => {
             />
           </View>
         </View>
-      </ScrollView>
-    </>
+      </>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 20,
   },
   item: {
     backgroundColor: 'red',
