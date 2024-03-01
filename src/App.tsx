@@ -2,7 +2,7 @@ import React from 'react';
 import {StatusBar} from 'react-native';
 import {FC} from 'react';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {NavigationContainer} from '@react-navigation/native';
+import {DefaultTheme, NavigationContainer} from '@react-navigation/native';
 import {QueryClient, QueryClientProvider} from 'react-query';
 import {RootStackScreen} from './routes/index';
 import {enableScreens} from 'react-native-screens';
@@ -21,10 +21,18 @@ const queryClient = new QueryClient({
   },
 });
 
+const navTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: 'white',
+  },
+};
+
 const App: FC = () => {
   return (
     <SafeAreaProvider>
-      <NavigationContainer>
+      <NavigationContainer theme={navTheme}>
         <QueryClientProvider client={queryClient}>
           <StatusBar />
           <RootStackScreen />

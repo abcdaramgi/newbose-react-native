@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import {View, Text, StyleSheet, Image, Dimensions} from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
 
 const {width, height} = Dimensions.get('window');
 
@@ -20,14 +21,18 @@ const TestTabScreen2: FC = () => {
           자연스럽게 이루어질까요?
         </Text>
         <Image
-          source={require('../public/images/vbuOix_cut.jpg')}
+          source={require('../../../public/images/vbuOix_cut.jpg')}
           style={styles.postImage}
         />
       </View>
     );
   };
 
-  return <View style={styles.viewStyle}>{renderSections()}</View>;
+  return (
+    <ScrollView>
+      <View style={styles.viewStyle}>{renderSections()}</View>
+    </ScrollView>
+  );
 };
 
 const styles = StyleSheet.create({
@@ -40,7 +45,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   postContainer: {
-    backgroundColor: 'purple',
+    backgroundColor: 'white',
   },
   postImage: {
     width: width,

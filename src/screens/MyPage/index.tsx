@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
-import {Text, View, Button, StyleSheet, Image} from 'react-native';
-import TestTabScreen from '../../components/testTabScreen';
-import TestTabScreen2 from '../../components/testTabScreen2';
-import TestTabScreen3 from '../../components/testTabScreen3';
+import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import TestTabScreen from '../common/components/testTabScreen';
+import TestTabScreen2 from '../common/components/testTabScreen2';
+import TestTabScreen3 from '../common/components/testTabScreen3';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
 const MyPageScreen: FC = () => {
@@ -45,27 +45,19 @@ const MyPageScreen: FC = () => {
             </View>
           </View>
           <View style={styles.buttonContainer}>
-            <Button
-              onPress={() => {}}
-              title="즐겨찾기"
-              accessibilityLabel="learn more about this purple button"
-            />
-            <Button
-              // bordered
-              // dark
-              // small
-              // icon
-              onPress={() => {}}
-              title="안즐겨찾기"
-              accessibilityLabel="learn more about this purple button"
-            />
+            <TouchableOpacity style={styles.followbutton}>
+              <Text>Follow</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button}>
+              <Text>♡</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
       <View style={styles.infoContainer}>
-        <Text style={styles.username}>싸우자 귀신아</Text>
-        <Text>대구광역시 중구 서성로 20길 25</Text>
-        <Text>www.naver.com</Text>
+        <Text style={styles.username}>NewBose</Text>
+        <Text>대구광역시 중구 ******</Text>
+        <Text>www.*****.com</Text>
       </View>
       {/* <View style={styles.tapButtonContainer}>
         <Button onPress={() => {}} title="profile" />
@@ -76,9 +68,9 @@ const MyPageScreen: FC = () => {
       {/* 렌더링 위치 (웹에서는 컴포넌트화 시켰는데 이렇게 깡으로 렌더링 해줘도 되나?) */}
       {/* {this.renderSection()} */}
       <Tab.Navigator>
-        <Tab.Screen name="profile" component={TestTabScreen} />
-        <Tab.Screen name="image" component={TestTabScreen2} />
-        <Tab.Screen name="blog" component={TestTabScreen3} />
+        <Tab.Screen name="피드" component={TestTabScreen} />
+        <Tab.Screen name="게시글" component={TestTabScreen2} />
+        <Tab.Screen name="매거진" component={TestTabScreen3} />
       </Tab.Navigator>
     </>
   );
@@ -86,16 +78,39 @@ const MyPageScreen: FC = () => {
 
 // @todo: tailwind css 적용
 const styles = StyleSheet.create({
+  followbutton: {
+    width: 200,
+    height: 25,
+    backgroundColor: 'white',
+    borderRadius: 3,
+    borderWidth: 1,
+    borderColor: 'gray',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 5,
+  },
+  button: {
+    width: 80,
+    height: 25,
+    backgroundColor: 'deepskyblue',
+    borderRadius: 3,
+    borderWidth: 1,
+    borderColor: 'gray',
+    color: 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 5,
+  },
   headContainer: {},
   profileContainer: {
     flexDirection: 'row',
     paddingTop: 10,
-    backgroundColor: 'red',
+    backgroundColor: 'white',
   },
   avatarContainer: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: 'blue',
+    backgroundColor: 'white',
   },
   avatar: {
     width: 75,
@@ -108,7 +123,7 @@ const styles = StyleSheet.create({
   statsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    backgroundColor: 'green',
+    backgroundColor: 'white',
   },
   statItem: {
     alignItems: 'center',
@@ -120,7 +135,8 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     marginTop: 10,
-    backgroundColor: 'yellow',
+    backgroundColor: 'white',
+    // width: 200,
   },
   editProfileButton: {
     flex: 4,
@@ -138,7 +154,7 @@ const styles = StyleSheet.create({
   infoContainer: {
     paddingHorizontal: 10,
     paddingVertical: 10,
-    backgroundColor: 'pink',
+    backgroundColor: 'white',
   },
   username: {
     fontWeight: 'bold',

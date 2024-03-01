@@ -67,7 +67,7 @@
       "@*": ["src/*"],
       "@api/*": ["src/api/*"],
       "@assets/*": ["src/assets/*"],
-      "@components/*": ["src/components/*"],
+      "@components/*": ["src/screens/common/components/*"],
       "@hooks/*": ["src/hooks/*"],
       "@i18n/*": ["src/i18n/*"],
       "@routes/*": ["src/routes/*"],

@@ -1,5 +1,12 @@
 import React, {FC} from 'react';
-import {View, Text, TextInput, StyleSheet, Button, Image} from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 type ItemProps = {title: string};
@@ -25,14 +32,19 @@ const SearchScreen: FC = () => {
   return (
     <>
       <View style={styles.topContainer}>
-        <Button
+        {/* <Button
           title="<"
           onPress={() => navigation.navigate('Home' as never)}
-        />
+        /> */}
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate('Home' as never)}>
+          <Text>◀</Text>
+        </TouchableOpacity>
         <TextInput style={styles.input} placeholder="검색어를 입력하세요" />
       </View>
       <View style={styles.recentSearchContainer}>
-        <Text>최근 검색어</Text>
+        <Text style={styles.textStyles}>최근 검색어</Text>
         <View style={styles.recemeSearchWordContainer}>
           {recentSearchWords.map((word, index) => (
             <RecentSearchItem key={index} title={word} />
@@ -40,22 +52,22 @@ const SearchScreen: FC = () => {
         </View>
       </View>
       <View style={styles.hotKeywordContainer}>
-        <Text>인기 검색어</Text>
+        <Text style={styles.textStyles}>인기 검색어</Text>
         <View style={styles.hotKeywordItemContainer}>
-          <Item title="1위" />
-          <Item title="2위" />
-          <Item title="3위" />
-          <Item title="4위" />
-          <Item title="5위" />
-          <Item title="6위" />
-          <Item title="7위" />
-          <Item title="8위" />
-          <Item title="9위" />
-          <Item title="10위" />
+          <Item title="1위 상의" />
+          <Item title="2위 하의" />
+          <Item title="3위 셔츠" />
+          <Item title="4위 바지" />
+          <Item title="5위 패딩" />
+          <Item title="6위 신발" />
+          <Item title="7위 양말" />
+          <Item title="8위 저지" />
+          <Item title="9위 슈트" />
+          <Item title="10위 고트" />
         </View>
       </View>
       <View style={styles.hotKeywordContainer}>
-        <Text>사진들어오ㅓㄴ다</Text>
+        <Text style={styles.textStyles}>인기 가게 상품</Text>
         <View style={styles.hotListContainer}>
           <Image
             source={require('../../public/images/상의1.jpg')}
@@ -72,26 +84,42 @@ const SearchScreen: FC = () => {
         </View>
       </View>
       <View style={styles.adContainer}>
-        <Text>여기부터는 광고가 접수하겠습니다</Text>
+        <Text style={styles.margin}>행복옷가게</Text>
+        <Text style={styles.margin}>행운옷가게</Text>
       </View>
     </>
   );
 };
 
 const styles = StyleSheet.create({
+  textStyles: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  button: {
+    width: 40,
+    height: 40,
+    backgroundColor: 'white',
+    // borderRadius: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 5,
+  },
   topContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    backgroundColor: 'red',
+    backgroundColor: 'white',
   },
   recentSearchContainer: {
     flexDirection: 'column',
     flexWrap: 'wrap',
-    backgroundColor: 'blue',
+    backgroundColor: 'white',
     marginHorizontal: 10,
   },
   recentSearchItem: {
-    backgroundColor: 'yellow',
+    // backgroundColor: 'yellow',
+    borderColor: 'gray',
+    borderWidth: 1,
     borderRadius: 45,
     padding: 5,
     marginVertical: 10,
@@ -104,21 +132,22 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    width: 300,
+    width: 345,
     margin: 6,
     borderWidth: 1,
     borderRadius: 10,
-    marginLeft: 20,
+    // marginLeft: 50,
+    backgroundColor: 'whitesmoke',
   },
   hotKeywordContainer: {
     flexDirection: 'column',
     flexWrap: 'wrap',
-    backgroundColor: 'green',
+    backgroundColor: 'white',
     marginHorizontal: 10,
     marginTop: 40,
   },
   hotKeywordItemContainer: {
-    backgroundColor: 'orange',
+    // backgroundColor: 'orange',
     flexWrap: 'wrap',
     height: 100,
     minWidth: '100%',
@@ -128,7 +157,7 @@ const styles = StyleSheet.create({
     // flexWrap: 'wrap',
     paddingVertical: 10,
     marginTop: 20,
-    backgroundColor: 'pink',
+    // backgroundColor: 'pink',
   },
   hotListImage: {
     width: 150,
@@ -136,16 +165,20 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   item: {
-    backgroundColor: 'red',
+    // backgroundColor: 'red',
     width: 150,
     height: 20,
   },
   adContainer: {
-    flexDirection: 'column',
+    flexDirection: 'row',
     flexWrap: 'wrap',
-    backgroundColor: 'purple',
+    backgroundColor: 'white',
     marginHorizontal: 10,
     paddingVertical: 40,
+    // marginLeft: 30,
+  },
+  margin: {
+    marginRight: 100,
   },
 });
 

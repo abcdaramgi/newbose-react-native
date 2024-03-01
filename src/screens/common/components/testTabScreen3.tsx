@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import {View, StyleSheet, Image, Dimensions} from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
 
 const {width, height} = Dimensions.get('window');
 
@@ -31,7 +32,11 @@ const TestTabScreen3: FC = () => {
     });
   };
 
-  return <View style={styles.viewStyle}>{renderSections()}</View>;
+  return (
+    <ScrollView>
+      <View style={styles.viewStyle}>{renderSections()}</View>
+    </ScrollView>
+  );
 };
 
 const styles = StyleSheet.create({
